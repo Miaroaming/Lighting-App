@@ -1,0 +1,817 @@
+@import 'variables';
+@import 'mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $disabled-box-color;
+}
+
+// consistent across pages
+// top navbar
+.top-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #logo-pic {
+        width: 200px;
+        height: 80px;
+        background-image: url(/images/ledvance-logo.png);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+// bottom navbar
+.nav-cont {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: $secondary-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+
+    .fa-house {
+        font-size: 40px;
+        color: white;
+    }
+
+    .fa-calendar-days {
+        font-size: 40px;
+        color: white;
+    }
+
+    .fa-gear {
+        font-size: 40px;
+        color: white;
+    }
+
+    .nav-headings {
+        text-decoration: none;
+        font-size: 15px;
+        color: white;
+        font-family: $font-family;
+        font-weight: bold;
+    }
+}
+
+// HOMEPAGE
+#homepage-icon {
+    background-color: #e55b00;
+}
+
+.header-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 115px;
+
+    h1 {
+        color: $primary-color;
+        font-family: $font-family;
+    }
+
+    .caption {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        color: $primary-color;
+        font-family: $font-family;
+        text-align: center;
+        width: 80%;
+
+        .fa-toggle-on {
+            font-size: 25px;
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+    }
+
+}
+
+
+.section-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    width: 100%;
+    height: 660px;
+    border-radius: 30px 30px 0px 0px;
+    margin-top: 15px;
+
+    .section-headers {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        margin-top: 15px;
+        gap: 45px;
+
+        .section-headers-links {
+            text-decoration: none;
+            color: $primary-color;
+            font-family: $font-family;
+            font-weight: bold;
+        }
+
+        #mood-title {
+            text-decoration: underline;
+            font-weight: 900;
+        }
+
+        #rooms-title {
+            text-decoration: underline;
+            font-weight: 900;
+        }
+    }
+
+    .box-cont {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        #checkered-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: dashed 3px $primary-color;
+            background-color: $disabled-box-color;
+            gap: 5px;
+            font-family: $font-family;
+            color: $primary-color;
+
+            .fa-plus {
+                font-size: 35px;
+            }
+        }
+
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 140px;
+        background-color: $disabled-box-color;
+        padding: 15px;
+        @include border-radius($radius);
+        gap: 25px;
+        @include box-shadow($shadow);
+
+        .box-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .fa-pen-to-square {
+                font-size: 22px;
+                color: $primary-color;
+            }
+
+            #house-home,
+            #couch-home,
+            .fa-briefcase,
+            #cutlery-home,
+            .fa-bed {
+                font-size: 55px;
+                color: $faded-color;
+            }
+        }
+
+        .bottom-icons {
+            align-items: center;
+
+            .room-headers {
+                font-size: 20px;
+                color: $primary-color;
+                font-family: $font-family;
+                font-weight: bold;
+            }
+
+            .fa-toggle-off {
+                font-size: 40px;
+                color: $primary-color;
+            }
+
+            .fa-toggle-on {
+                font-size: 40px;
+                color: #e9e9e9;
+            }
+
+        }
+
+    }
+
+}
+
+
+// JAVASCRIPT COLORS FOR BUTTONS
+// all rooms button
+.clicked-primary-green {
+    background-color: #93d769 !important;
+}
+
+.clicked-secondary-green {
+    color: #c6faa6 !important;
+}
+
+.clicked-third-green {
+    color: #2b6109 !important;
+}
+
+.clicked-box-shadow-green {
+    box-shadow: inset 16px 16px 80px #3c890d,
+        inset -16px -16px 40px #e0ffcd !important;
+}
+
+// lounge button
+.clicked-primary-purple {
+    background-color: #CFB8FF !important;
+}
+
+.clicked-secondary-purple {
+    color: #e0d1ff !important;
+}
+
+.clicked-third-purple {
+    color: #642fd7 !important;
+}
+
+.clicked-box-shadow-purple {
+    box-shadow: inset 16px 16px 80px #8a54ff,
+        inset -16px -16px 40px #faf7ff !important;
+}
+
+// office button
+.clicked-primary-blue {
+    background-color: #AFF1FF !important;
+}
+
+.clicked-secondary-blue {
+    color: #d7f8ff !important;
+}
+
+.clicked-third-blue {
+    color: #0c5e70 !important;
+}
+
+.clicked-box-shadow-blue {
+    box-shadow: inset 16px 16px 80px #0f819b,
+        inset -16px -16px 40px #dcf9ff !important;
+}
+
+// kitchen button
+.clicked-primary-pink {
+    background-color: #FFBDF1 !important;
+}
+
+.clicked-secondary-pink {
+    color: #ffcdf4 !important;
+}
+
+.clicked-third-pink {
+    color: #9b1c80 !important;
+}
+
+.clicked-box-shadow-pink {
+    box-shadow: inset 16px 16px 80px #d341b4,
+        inset -16px -16px 40px #ffe4f9 !important;
+}
+
+// bedroom button
+.clicked-primary-orange {
+    background-color: #FFC496 !important;
+}
+
+.clicked-secondary-orange {
+    color: #ffe5d4 !important;
+}
+
+.clicked-third-orange {
+    color: #933902 !important;
+}
+
+.clicked-box-shadow-orange {
+    box-shadow: inset 16px 16px 80px #f3701e,
+        inset -16px -16px 40px #ffdabe !important;
+}
+
+
+
+// MOOD PAGE
+.fa-lightbulb {
+    position: absolute;
+    top: 41%;
+    z-index: 2;
+    font-size: 80px;
+    color: $primary-color;
+}
+
+.colour-wheel {
+    --num-colors: 12;
+    --color-size: calc(100% / var(--num-colors));
+    width: 250px;
+    height: 250px;
+    position: relative;
+    border-radius: 50%;
+    margin-top: 4%;
+    background: conic-gradient(#f22 calc(0 * var(--color-size)) calc(1 * var(--color-size)),
+            #f06 calc(1 * var(--color-size)) calc(2 * var(--color-size)),
+            #63b calc(2 * var(--color-size)) calc(3 * var(--color-size)),
+            #44b calc(3 * var(--color-size)) calc(4 * var(--color-size)),
+            #09f calc(4 * var(--color-size)) calc(5 * var(--color-size)),
+            #0af calc(5 * var(--color-size)) calc(6 * var(--color-size)),
+            #0bd calc(6 * var(--color-size)) calc(7 * var(--color-size)),
+            #098 calc(7 * var(--color-size)) calc(8 * var(--color-size)),
+            #0a4 calc(8 * var(--color-size)) calc(9 * var(--color-size)),
+            #7c3 calc(9 * var(--color-size)) calc(10 * var(--color-size)),
+            #fe0 calc(10 * var(--color-size)) calc(11 * var(--color-size)),
+            #fb0 calc(11 * var(--color-size)) calc(12 * var(--color-size)));
+    transform: rotate(calc(-180deg / var(--num-colors)));
+}
+
+.colour-wheel::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: white;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.colour-cont {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+
+    .big-adjust-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 4%;
+    }
+
+    .dropbtn {
+        display: flex;
+        justify-content: space-between;
+        background-color: $secondary-color;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        @include border-radius($radius);
+        width: 300px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-top: 30px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: $disabled-box-color;
+        min-width: 160px;
+        @include box-shadow($shadow);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        display: block;
+        font-family: $font-family;
+        color: $primary-color;
+        padding: 12px 16px;
+        text-decoration: none;
+    }
+
+    .show {
+        display: block;
+    }
+}
+
+h2 {
+    font-family: $font-family;
+    color: $primary-color;
+    font-size: 25px;
+}
+
+.colour-edit-text {
+    font-family: $font-family;
+    color: $primary-color;
+    font-size: 15px;
+}
+
+.adjust-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+
+    .fa-sun {
+        font-size: 25px;
+        color: $primary-color;
+    }
+
+    .fa-eye-dropper {
+        font-size: 25px;
+        color: $primary-color;
+    }
+
+    .slidecontainer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .slider {
+        width: 95%;
+        height: 15px;
+        outline: none;
+        color: $primary-color;
+    }
+
+    p {
+        font-size: 18px;
+        font-family: $font-family;
+        color: $primary-color;
+    }
+}
+
+
+
+
+// SCHEDULES PAGE
+#schedules-icon {
+    background-color: #e55b00;
+}
+
+.fa-arrow-left {
+    position: absolute;
+    top: 118px;
+    color: $primary-color;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+.box-cont-schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+
+    .box-schedule {
+        width: 80%;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        background-color: $disabled-box-color;
+        padding: 10px;
+        @include border-radius($radius);
+        gap: 0px;
+        @include box-shadow($shadow);
+
+        .box-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .bottom-icons {
+            font-size: 20px;
+            font-family: $font-family;
+            font-weight: bold;
+            color: $primary-color;
+        }
+
+        .fa-pen-to-square {
+            font-size: 22px;
+            color: $primary-color;
+        }
+
+        #house-home,
+        #couch-home,
+        #cutlery-home {
+            font-size: 55px;
+            color: $faded-color;
+        }
+
+        .fa-toggle-off,
+        .fa-toggle-on {
+            font-size: 45px;
+        }
+    }
+
+    #checkered-box-schedule {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        height: 100px;
+        @include border-radius($radius);
+        border: dashed 3px $primary-color;
+        background-color: $disabled-box-color;
+        gap: 5px;
+        font-family: $font-family;
+        color: $primary-color;
+        font-weight: bold;
+        @include box-shadow($shadow);
+    }
+
+    .fa-plus {
+        font-size: 35px;
+    }
+}
+
+.bottom-icons {
+    align-items: center;
+}
+
+
+// Settings Page
+#settings-icon {
+    background-color: #e55b00;
+}
+
+.settings-list {
+    display: flex;
+    margin-left: 10%;
+    flex-direction: column;
+    width: 80%;
+    gap: 45px;
+    margin-top: 45px;
+    font-family: $font-family;
+    color: $primary-color;
+
+    .list-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .left-text {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .fa-angle-right {
+            font-size: 20px;
+        }
+    }
+
+    .settings-icon {
+        font-size: 25px;
+    }
+}
+
+#help {
+    text-decoration: underline;
+}
+
+
+// media querie for TABLET
+@media screen and (min-width: 600px) and (max-width: 992px) {
+
+    // HOME PAGE
+    .section-headers-links {
+        font-size: 18px;
+    }
+
+    // MOOD PAGE
+    .fa-lightbulb {
+        top: 370px;
+    }
+
+    // SCHEDULE PAGE
+    .room-headers {
+        font-size: 20px;
+    }
+
+    // SETTINGS PAGE
+    .fa-arrow-left {
+        margin-left: 25px;
+        margin-top: 5px;
+    }
+}
+
+// media querie for DESKTOP
+@media screen and (min-width: 992px) {
+
+    // HOME PAGE
+    .section-cont {
+        height: 800px;
+
+        .section-headers-links {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    }
+
+    .box-cont {
+        width: 100%;
+        margin-top: 25px;
+
+        .box {
+            width: 40%;
+        }
+
+        #checkered-box:hover {
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+
+    #boxHome:hover {
+        background-color: #ceffb0;
+        cursor: pointer;
+
+        #house-home,
+        #pen-allrooms,
+        #allrooms-header,
+        #allrooms-toggle {
+            color: #90c370;
+        }
+    }
+
+    #boxLounge:hover {
+        background-color: #e2d4ff;
+        cursor: pointer;
+
+        #couch-home,
+        #pen-lounge,
+        #lounge-header,
+        #lounge-toggle {
+            color: #a18ccf;
+        }
+    }
+
+    #boxOffice:hover {
+        background-color: #c1f4ff;
+        cursor: pointer;
+
+        #briefcase-icon,
+        #pen-office,
+        #office-header,
+        #office-toggle {
+            color: #77b1c0;
+        }
+    }
+
+    #boxKitchen:hover {
+        background-color: #ffd4f6;
+        cursor: pointer;
+
+        #cutlery-home,
+        #pen-kitchen,
+        #kitchen-header,
+        #kitchen-toggle {
+            color: #df93cf;
+        }
+    }
+
+    #boxBedroom:hover {
+        background-color: #ffd4b3;
+        cursor: pointer;
+
+        #bedroom-icon,
+        #pen-bedroom,
+        #bedroom-header,
+        #bedroom-toggle {
+            color: #e0a27c;
+        }
+    }
+
+
+    // MOOD PAGE
+    .colour-cont {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+
+        .fa-lightbulb {
+            top: 470px;
+            left: 380px;
+            font-size: 120px;
+        }
+
+        .colour-wheel {
+            width: 350px;
+            height: 350px;
+        }
+
+        .big-adjust-cont {
+            width: 40%;
+        }
+
+        .dropbtn {
+            margin-top: 25%;
+        }
+
+        .dropbtn:hover {
+            cursor: pointer;
+            background-color: #d9691d;
+        }
+    }
+
+
+
+    // SCHEDULES PAGE
+    .box-cont-schedule {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .box-schedule {
+            width: 40%;
+            height: 200px;
+            gap: 40px;
+            padding: 20px;
+
+            #house-home,
+            #cutlery-home,
+            #couch-home {
+                font-size: 90px;
+            }
+        }
+
+        #checkered-box-schedule {
+            width: 40%;
+            height: 200px;
+        }
+
+        #checkered-box-schedule:hover {
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+
+
+    // SETTINGS PAGE
+    .fa-arrow-left {
+        top: 120px;
+    }
+
+    .header-cont {
+        top: 165px;
+    }
+
+    .settings-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 6%;
+        gap: 60px;
+
+
+        .list-items {
+            width: 40%;
+            margin-left: 5%;
+            cursor: pointer;
+        }
+
+        #help {
+            margin-left: 5%;
+        }
+    }
+
+
+}

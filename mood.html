@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Mood</title>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <a href="index.html" id="logo-pic"></a>
+    </div>
+
+
+    <div class="header-cont">
+        <h1>
+            Welcome home!
+        </h1>
+        <p class="caption">
+            To turn on/off lights, press the <span> <i class="fa-solid fa-toggle-on"></i> </span> button
+        </p>
+    </div>
+
+
+    <div class="section-cont">
+        <div class="section-headers">
+            <a href="index.html" class="section-headers-links">Rooms</a>
+            <a href="#" class="section-headers-links" id="mood-title">Mood</a>
+            <a href="#" class="section-headers-links">Music</a>
+        </div>
+
+        <div class="colour-cont">
+            <i class="fa-regular fa-lightbulb"></i>
+            <div class="colour-wheel"></div>
+
+            <div class="big-adjust-cont">
+                <h2>Presets</h2>
+                <p class="colour-edit-text">Brightness</p>
+                <div class="adjust-cont">
+                    <i class="fa-regular fa-sun"></i>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider">
+                    </div>
+                    <p>50%</p>
+                </div>
+
+                <p class="colour-edit-text">Saturation</p>
+                <div class="adjust-cont">
+                    <i class="fa-solid fa-eye-dropper"></i>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="90" class="slider">
+                    </div>
+                    <p>90%</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Apply to... <i
+                        class="fa-solid fa-angle-down"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">All rooms</a>
+                    <a href="#">Lounge</a>
+                    <a href="#">Office</a>
+                    <a href="#">Kitchen</a>
+                    <a href="#">Bedroom</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <div class="nav-cont">
+        <div class="navbar-items" id="homepage-icon">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <a href="index.html" class="nav-headings">Home</a>
+        </div>
+
+        <div class="navbar-items">
+            <a href="schedule.html"><i class="fa-solid fa-calendar-days"></i></a>
+            <a href="schedule.html" class="nav-headings">Schedules</a>
+        </div>
+
+        <div class="navbar-items">
+            <a href="settings.html"><i class="fa-solid fa-gear"></i></a>
+            <a href="settings.html" class="nav-headings">Settings</a>
+        </div>
+    </div>
+
+
+    <!-- icon link -->
+    <script src="https://kit.fontawesome.com/378c9459f7.js" crossorigin="anonymous"></script>
+
+    <!-- javascript link -->
+    <script src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>
